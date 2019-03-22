@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="CBM.Default1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>Muuk</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="/Scripts/jquery-1.12.4.min.js"></script>
+    <link href="/Style/basico.css" rel="stylesheet" />
+    <link href="/Style/topmenu.css" rel="stylesheet" />
+    <link href="/Style/modal.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <img alt="preHome" src="/Images/TopMenu/Home_Icono_Over.png" style="visibility: hidden; float: left;" />
+    <img alt="preCart" src="/Images/TopMenu/Shopping_Cart_Over.png" style="visibility: hidden; float: left;" />
+    <img alt="preDelete" src="/Images/TopMenu/Basura_Over.png" style="visibility: hidden; float: left;" />
+    <img alt="preClose" src="/Images/Cerrar_Icono_Over.png" style="visibility: hidden; float: left;" />
+    <img alt="preCloseDiv" src="/Images/Cerrar_IconoDiv_Over.png" style="visibility: hidden; float: left;" />
+    <form runat="server">
+        <header>
+            <div id="topcontainer">
+                <div id="logo">
+                    <img src="/Images/TopMenu/Logo_corto.png" />
+                </div>
+                <div id="topmenu">
+                    <ul>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnHome" CssClass="lnkBtn" runat="server" OnClick="lnkBtnHome_Click"><label class="ico-home"></label></asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnSoluciones" runat="server">Soluciones</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnBlog" runat="server">Blog</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnContacto" runat="server">Contacto</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnLogin" runat="server" OnClick="lnkBtnLogin_Click">Login</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnLogout" runat="server" OnClick="lnkBtnLogout_Click">Logout</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton ID="lnkBtnShoppingCart" CssClass="lnkBtn" runat="server" OnClick="lnkBtnShoppingCart_Click"><label class="ico-shopping"></label></asp:LinkButton></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section id="main">
+            <section id="contenido">
+                <div class="info">
+                    <div class="internal">
+                        <div class="page">
+                            <div class="main">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div class="clearfix"></div>
+
+        <div id="footerContainer" runat="server">
+            <footer>
+                <div id="botcontainer">
+                    <p class="floatleft"><a href="/TC.aspx" target="_blank">Términos y condiciones</a> <span>|</span> <a href="/Privacidad.aspx" target="_blank">Política de privacidad</a> <span>|</span> <a href="/FAQ.aspx" target="_blank">Ayuda</a></p>
+                    <p class="alignright">&copy;2018 muuk</p>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
